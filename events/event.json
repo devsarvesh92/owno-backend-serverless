@@ -1,35 +1,15 @@
 {
-  "version": "2.0",
-  "routeKey": "POST /register",
-  "rawPath": "/register",
-  "rawQueryString": "",
+  "resource": "/register",
+  "path": "/register",
+  "httpMethod": "POST",
   "headers": {
-      "accept": "*/*",
-      "content-length": "30",
-      "content-type": "application/json",
-      "host": "api-id.execute-api.region.amazonaws.com",
-      "user-agent": "curl/7.64.1",
-      "x-amzn-trace-id": "Root=1-5e9c1234-abc123def456",
-      "x-forwarded-for": "123.123.123.123",
-      "x-forwarded-port": "443",
-      "x-forwarded-proto": "https"
+    "Content-Type": "application/json"
   },
   "requestContext": {
-      "accountId": "123456789012",
-      "apiId": "api-id",
-      "http": {
-          "method": "POST",
-          "path": "/register",
-          "protocol": "HTTP/1.1",
-          "sourceIp": "123.123.123.123",
-          "userAgent": "curl/7.64.1"
-      },
-      "requestId": "id",
-      "routeKey": "POST /register",
-      "stage": "$default",
-      "time": "12/Mar/2024:19:03:58 +0000",
-      "timeEpoch": 1583348638390
+    "resourcePath": "/register",
+    "httpMethod": "POST",
+    "path": "/register"
   },
-  "body": "{\"phone_number\": \"+1234567890\"}",
+  "body": "{\"phone_number\": \"1234\"}",
   "isBase64Encoded": false
 }

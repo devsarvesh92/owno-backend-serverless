@@ -24,9 +24,8 @@ def _get_handler(event: dict[str, Any]):
     """
     Get the handler for the event
     """
-    request_context = event.get("requestContext", {})
-    method = request_context.get("http", {}).get("method")
-    path = request_context.get("http", {}).get("path")
+    method = event.get("httpMethod", {})
+    path = event.get("path", {})
 
     match method, path:
         case "POST", "/register":
