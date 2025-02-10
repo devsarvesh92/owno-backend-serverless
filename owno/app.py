@@ -16,6 +16,12 @@ def lambda_handler(event, context):
     LOGGER.info(f"Returning result: {json.dumps(result)}")
     return {
         "statusCode": 200,
+        "headers": {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
+        },
         "body": json.dumps(result),
     }
 
@@ -26,7 +32,8 @@ def _get_handler(event: dict[str, Any]):
     """
     method = event.get("httpMethod", {})
     path = event.get("path", {})
+    body = json.loads(event.get("body", {}) or "{}")
 
     match method, path:
         case "POST", "/register":
-            return partial(register_user, phone_number=event.get("phone_number"))
+            return partial(register_user, phone_number=body.get("phone_number"))
