@@ -32,6 +32,13 @@ Resources:
       Runtime: python3.10
       Architectures:
         - x86_64
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - sns:Publish
+                - sns:SetSMSAttributes
+              Resource: '*'
       Events:
         Owno:
           Type: Api
